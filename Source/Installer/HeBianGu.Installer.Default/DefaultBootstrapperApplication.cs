@@ -9,14 +9,16 @@ using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 
 namespace HeBianGu.Installer.Default
 {
-    public class CustomBootstrapperApplication : BootstrapperApplication
+    public class DefaultBootstrapperApplication : BootstrapperApplication
     {
         public static Dispatcher Dispatcher { get; set; }
+
         protected override void Run()
         {
             Dispatcher = Dispatcher.CurrentDispatcher;
 
             var model = BootstrapperApplicationModel.GetBootstrapperAppModel(this);
+
             var view = new InstallView();
 
             model.SetWindowHandle(view);

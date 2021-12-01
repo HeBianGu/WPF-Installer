@@ -41,7 +41,7 @@ namespace HeBianGu.Installer.Default.Views
                 return;
             }
             else
-                CustomBootstrapperApplication.Dispatcher.InvokeShutdown();
+                DefaultBootstrapperApplication.Dispatcher.InvokeShutdown();
         }
 
 

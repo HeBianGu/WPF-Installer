@@ -4,15 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeBianGu.Installer.Default.Views"
+               xmlns:loc="clr-namespace:HeBianGu.Installer.Default" 
               xmlns:h="QQ:908293466" 
              mc:Ignorable="d" FontSize="14">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/HeBianGu.Installer.Default;component/Dictionary/StyleResources.xaml"></ResourceDictionary>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"/>
@@ -53,12 +47,12 @@
         <Border Background="{DynamicResource S.Brush.TextBackground.Default}"  Grid.Row="1" Margin="-3" CornerRadius="{DynamicResource S.Window.Item.CornerRadius.Bottom}">
             <Grid Margin="30 10 30 20">
                 <Grid>
-                    <Button Content="{DynamicResource InstallButtonText}" Command="{Binding btn_install}"
+                    <Button Content="快速安装" Command="{Binding btn_install}"
                             Width="200" Height="45" FontSize="{DynamicResource S.FontSize.Header.2}" IsEnabled="{Binding ElementName=Accept,Path=IsChecked}"/>
 
                     <Button HorizontalAlignment="Right" Command="{Binding btn_show}" Style="{DynamicResource S.Button.Transparent}" VerticalAlignment="Bottom" BorderThickness="0" Background="Transparent">
                         <WrapPanel>
-                            <TextBlock Text="{DynamicResource CustomeInstall}"/>
+                            <TextBlock Text="自定义安装"/>
                             <TextBlock Text=" &gt;"/>
                         </WrapPanel>
                     </Button>
@@ -66,44 +60,43 @@
 
                 <UniformGrid Visibility="{Binding SeleFileVisibility}" Columns="1" Background="{DynamicResource S.Brush.TextBackground.Default}">
 
-                    <TextBlock Text="{DynamicResource InstallLocation}"/>
+                    <TextBlock Text="安装位置："/>
 
                     <h:Row VerticalAlignment="Center" Margin="-5 -5 0 0">
                         <TextBox Grid.ColumnSpan="10" Text="{Binding InstallFolder}" VerticalContentAlignment="Center"/>
-                        <Button Content="{DynamicResource Browse}" Width="Auto" Command="{Binding btn_browse}" Grid.Column="10" Grid.ColumnSpan="2"
+                        <Button Content="浏览" Width="Auto" Command="{Binding btn_browse}" Grid.Column="10" Grid.ColumnSpan="2"
                             Style="{DynamicResource S.Button.Transparent}" 
                             BorderBrush="{DynamicResource S.Brush.TextBorderBrush.Default}" BorderThickness="1"/>
                     </h:Row>
 
-                    <CheckBox IsChecked="{Binding CreateShortCut}" Content="{DynamicResource ToDeskTop}"/>
+                    <CheckBox IsChecked="{Binding CreateShortCut}" Content="创建桌面图标"/>
 
                     <UniformGrid HorizontalAlignment="Right" Rows="1" Margin="0 -5">
-                        <Button Content="{DynamicResource Back}" Command="{Binding btn_show}" Style="{DynamicResource S.Button.Transparent}" 
+                        <Button Content="返回" Command="{Binding btn_show}" Style="{DynamicResource S.Button.Transparent}" 
                             BorderBrush="{DynamicResource S.Brush.TextBorderBrush.Default}" BorderThickness="1"/>
-                        <Button Content="{DynamicResource Install}" Command="{Binding btn_install}" IsEnabled="{Binding ElementName=Accept,Path=IsChecked}"/>
+                        <Button Content="立即安装" Command="{Binding btn_install}" IsEnabled="{Binding ElementName=Accept,Path=IsChecked}"/>
                     </UniformGrid>
                 </UniformGrid>
 
 
-                <CheckBox Grid.Row="1" Name="Accept" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Width="300" IsChecked="True">
+                <CheckBox Grid.Row="1" Name="Accept" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="{DynamicResource S.Brush.TextForeground.Default}" Width="300" IsChecked="True">
                     <CheckBox.Style>
                         <Style TargetType="{x:Type CheckBox}">
                             <Setter Property="Padding" Value="4,0,0,0"/>
                             <Setter Property="Content">
                                 <Setter.Value>
                                     <WrapPanel>
-                                        <TextBlock Text="{DynamicResource Agree}"></TextBlock>
-                                        <TextBlock Text="{DynamicResource ProductName}"></TextBlock>
-                                        <TextBlock Text="{DynamicResource License}" TextDecorations="Underline">
-                                            <Hyperlink NavigateUri="https://blog.csdn.net/u010975589"></Hyperlink>
+                                        <TextBlock Text="同意"></TextBlock>
+                                        <TextBlock Text="{Binding Source={x:Static loc:InstallerConfig.Instance},Path=ProductName}"/>
+                                        <TextBlock Margin="2 0">
+                                            <h:ProcessHyperlink NavigateUri="https://blog.csdn.net/u010975589">用户许可协议</h:ProcessHyperlink>
                         <!--<helpclass:ExternalBrowserHyperlink NavigateUri="http://deepglint.com/">
                             <Run Text="{DynamicResource License }"></Run>
                         </helpclass:ExternalBrowserHyperlink>-->
                                         </TextBlock>
-                                        
-                                        <TextBlock Text="{DynamicResource And}"></TextBlock>
-                                        <TextBlock Text="{DynamicResource Privacy}" TextDecorations="Underline">
-                                                   <Hyperlink NavigateUri="https://blog.csdn.net/u010975589"></Hyperlink>
+                                        <TextBlock Text="及"/>
+                                        <TextBlock  Margin="2 0">
+                                                   <h:ProcessHyperlink NavigateUri="https://blog.csdn.net/u010975589">隐私政策</h:ProcessHyperlink>
                         <!--<helpclass:ExternalBrowserHyperlink NavigateUri="http://deepglint.com/">
                             <Run Text="{DynamicResource Privacy}"></Run>
                         </helpclass:ExternalBrowserHyperlink>-->

@@ -11,10 +11,13 @@ namespace HeBianGu.Installer.Default.ViewModels
 {
     public class InstallViewModel : NotifyPropertyChanged
     {
-        private string bit3264 = @"SOFTWARE\WOW6432Node\Microsoft\DeepGlint";
-        private string bit32 = @"SOFTWARE\Microsoft\DeepGlint";
-        private string productName = "LibraFClinet";
-        private static string MyInstellerName = "HeBianGu.Setup.Demo.msi";
+        //private string bit3264 = @"SOFTWARE\WOW6432Node\Microsoft\DeepGlint";
+        //private string bit32 = @"SOFTWARE\Microsoft\DeepGlint";
+
+        //private string productName = "LibraFClinet";
+
+        //private static string MyInstellerName = "HeBianGu.Setup.Demo.msi";
+
         private InstallState state;
         private static InstallViewModel viewmodel;
 
@@ -130,7 +133,7 @@ namespace HeBianGu.Installer.Default.ViewModels
 
         protected void DetectPackageComplete(object sender, DetectPackageCompleteEventArgs e)
         {
-            if (e.PackageId.Equals(MyInstellerName, StringComparison.Ordinal))
+            if (e.PackageId.Equals(InstallerConfig.Instance.MyInstellerName, StringComparison.Ordinal))
             {
                 this.State = e.State == PackageState.Present ?
                   InstallState.Present : InstallState.NotPresent;
@@ -154,21 +157,21 @@ namespace HeBianGu.Installer.Default.ViewModels
             try
             {
                 //64位
-                using (RegistryKey pathKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(bit3264))
+                using (RegistryKey pathKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(InstallerConfig.Instance.Bit3264))
                 {
                     var strs = pathKey.GetSubKeyNames();
                     foreach (string str in strs)
-                        if (str.Equals(productName))
+                        if (str.Equals(InstallerConfig.Instance.ProductName))
                         {
                             return true;
                         }
                 }
                 //32位
-                using (RegistryKey pathKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(bit32))
+                using (RegistryKey pathKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(InstallerConfig.Instance.Bit32))
                 {
                     var strs = pathKey.GetSubKeyNames();
                     foreach (string str in strs)
-                        if (str.Equals(productName))
+                        if (str.Equals(InstallerConfig.Instance.ProductName))
                         {
                             return true;
                         }

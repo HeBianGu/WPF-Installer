@@ -63,7 +63,7 @@
 
                 <ProgressBar Value="{Binding Progress}" HorizontalAlignment="Stretch" Minimum="0" Maximum="100"/>
 
-                <Button HorizontalAlignment="Right" Content="{DynamicResource Cancel}" Command="{Binding btn_cancel}"></Button>
+                <Button HorizontalAlignment="Right" Content="取消" Command="{Binding btn_cancel}"></Button>
             </UniformGrid>
         </Border>
     </Grid>

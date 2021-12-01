@@ -13,7 +13,7 @@ using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 
 namespace HeBianGu.Installer.Default.ViewModels
 {
-    public class ProgressPageViewModel : BaseViewModel
+    public class ProgressPageViewModel : NotifyPropertyChanged
     {
         private InstallViewModel installViewModel
         {
@@ -29,15 +29,17 @@ namespace HeBianGu.Installer.Default.ViewModels
         private int cacheProgress;
         private int executeProgress;
         private int progress;
+
         public int Progress
         {
             get { return progress; }
             set
             {
                 progress = value;
-                OnPropertyChanged("Progress");
+                RaisePropertyChanged("Progress");
             }
         }
+
         private string message;
         public string Message
         {
@@ -45,7 +47,7 @@ namespace HeBianGu.Installer.Default.ViewModels
             set
             {
                 message = value;
-                OnPropertyChanged("Message");
+                RaisePropertyChanged("Message");
             }
         }
 
@@ -110,7 +112,7 @@ namespace HeBianGu.Installer.Default.ViewModels
         public void RollBack(object o)
         {
             installViewModel.State = InstallState.Cancelled;
-            CustomBootstrapperApplication.Dispatcher.InvokeShutdown();
+            DefaultBootstrapperApplication.Dispatcher.InvokeShutdown();
         }
         public bool IsValid(object o)
         {

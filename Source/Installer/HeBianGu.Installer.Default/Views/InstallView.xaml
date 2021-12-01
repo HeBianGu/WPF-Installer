@@ -3,8 +3,10 @@
    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"            
    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-   xmlns:item="clr-namespace:HeBianGu.Installer.Default.Views" FontSize="14"
-   Title="{DynamicResource Version}"
+   xmlns:item="clr-namespace:HeBianGu.Installer.Default.Views" 
+   xmlns:local="clr-namespace:HeBianGu.Installer.Default"
+   FontSize="14"
+   Title="{Binding Source={x:Static local:InstallerConfig.Instance},Path=Version}"
    mc:Ignorable="d" WindowStyle="None" 
    CaptionBackground="{DynamicResource S.Brush.Accent}" 
    xmlns:h="QQ:908293466" 
@@ -15,7 +17,6 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/HeBianGu.Installer.Default;component/Dictionary/Strings.xaml"/>
                 <!--用于设置动态主题-->
                 <ResourceDictionary Source="/HeBianGu.Base.WpfBase;component/Theme/Color/LightThemeResource.xaml"/>
 
@@ -28,6 +29,12 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
+
+        <!--<item:ProgressPage/>-->
+        <!--<item:UnistallRepairPage/>-->
+        <!--<item:FinishPage/>-->
+        <!--<item:InstallPage/>-->
+        <!--<item:CancelPage/>-->
 
         <Grid  Visibility="{Binding ProgressEnabled,Converter={StaticResource BooleanToVisibilityConverter}}">
             <item:ProgressPage/>

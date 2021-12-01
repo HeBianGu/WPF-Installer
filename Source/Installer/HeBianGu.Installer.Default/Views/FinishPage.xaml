@@ -28,7 +28,7 @@
         </DockPanel>
 
         <Border Background="{DynamicResource S.Brush.TextBackground.Default}" Grid.Row="1" Margin="-3" CornerRadius="{DynamicResource S.Window.Item.CornerRadius.Bottom}">
-            <Button Grid.Row="1" Content="{DynamicResource Finish}" Width="200" Height="45" FontSize="{DynamicResource S.FontSize.Header.2}" 
+            <Button Grid.Row="1" Content="完成" Width="200" Height="45" FontSize="{DynamicResource S.FontSize.Header.2}" 
                     Command="{Binding btn_close}"/>
         </Border>
     </Grid>

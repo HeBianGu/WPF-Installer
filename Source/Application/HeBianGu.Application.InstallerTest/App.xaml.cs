@@ -18,7 +18,7 @@ namespace HeBianGu.Application.InstallerTest
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            CustomBootstrapperApplication application = new CustomBootstrapperApplication();
+            DefaultBootstrapperApplication application = new DefaultBootstrapperApplication();
 
             var model = BootstrapperApplicationModel.GetBootstrapperAppModel(application);
             var view = new InstallView();

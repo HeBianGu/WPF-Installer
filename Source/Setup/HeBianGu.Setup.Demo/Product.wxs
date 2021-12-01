@@ -2,7 +2,8 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Product Id="*" Name="HeBianGu.Setup.Demo" Language="1033" Version="1.0.0.0" Manufacturer="HeBianGu" UpgradeCode="76dc4288-3134-4a49-b18e-2a2cc24cf11f">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
-
+		<!--定义图标-->
+		<Icon Id="icon" SourceFile="Resources\logo.ico"/>
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate />
 

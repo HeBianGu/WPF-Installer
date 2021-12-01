@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeBianGu.Installer.Default.Views"
+             xmlns:loc="clr-namespace:HeBianGu.Installer.Default"
              d:DesignHeight="580" d:DesignWidth="800"
              mc:Ignorable="d" FontSize="14">
     <!--<UserControl.Resources>
@@ -29,7 +30,7 @@
                 <TextBlock
                    FontSize="{DynamicResource S.FontSize.Header.4}" HorizontalAlignment="Center">
             <Run Text="如果需要帮助，可以联系我们的客服"/>
-             <Run Text="{DynamicResource S.Config.Contract}"/>
+             <Run Text="{Binding Source={x:Static loc:InstallerConfig.Instance},Path=Contract}"/>
                 </TextBlock>
             </UniformGrid>
 
@@ -39,8 +40,8 @@
         
         <Border Background="{DynamicResource S.Brush.TextBackground.Default}" Grid.Row="1" Margin="-3" CornerRadius="{DynamicResource S.Window.Item.CornerRadius.Bottom}">
             <WrapPanel Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="30 0 30 0">
-                <Button Content="{DynamicResource Repair}" Command="{Binding btn_repair}"/>
-                <Button Content="{DynamicResource Uninstall}" Command="{Binding btn_uninstall}"/>
+                <Button Content="修复" Command="{Binding btn_repair}"/>
+                <Button Content="卸载" Command="{Binding btn_uninstall}"/>
             </WrapPanel>
         </Border>
     </Grid>

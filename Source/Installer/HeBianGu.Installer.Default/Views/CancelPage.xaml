@@ -18,7 +18,7 @@
                 </TextBlock>
                 <TextBlock
                    FontSize="{DynamicResource S.FontSize.Header.4}" HorizontalAlignment="Center">
-                    <Run Text="{DynamicResource HasOldVersion}"/>
+                    <Run Text="您的计算机已经安装其他版本，请先前往控制面板进行卸载"/>
                 </TextBlock>
             </UniformGrid>
 
@@ -27,7 +27,7 @@
         </DockPanel>
         
         <Border Background="{DynamicResource S.Brush.TextBackground.Default}" Grid.Row="1" Margin="-3" CornerRadius="{DynamicResource S.Window.Item.CornerRadius.Bottom}">
-            <Button  Content="{DynamicResource Close}" Command="{Binding btn_close}" Width="200" Height="45" FontSize="{DynamicResource S.FontSize.Header.2}" />
+            <Button  Content="关闭" Command="{Binding btn_close}" Width="200" Height="45" FontSize="{DynamicResource S.FontSize.Header.2}" />
         </Border>
     </Grid>
 </UserControl>

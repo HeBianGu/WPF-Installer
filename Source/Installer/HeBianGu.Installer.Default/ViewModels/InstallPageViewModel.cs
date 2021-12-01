@@ -16,10 +16,11 @@ using HeBianGu.Installer.Default.Views;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 
 namespace HeBianGu.Installer.Default.ViewModels
-{
-    public class InstallPageViewModel : BaseViewModel
+{ 
+
+    public class InstallPageViewModel : NotifyPropertyChanged
     {
-        private static string SoftWareName = "wpfapptopackage";
+        //private static string SoftWareName = "wpfapptopackage";
         private bool createShortCut;
         private string installFolder;
         private Visibility selectFileVisibility;
@@ -52,7 +53,8 @@ namespace HeBianGu.Installer.Default.ViewModels
             InitialCommand();
             SeleFileVisibility = Visibility.Collapsed;
             CreateShortCut = true;
-            InstallFolder = @"C:\Program Files (x86)\DeepGlin\" + SoftWareName;
+            //InstallFolder = @"C:\Program Files (x86)\DeepGlin\" + SoftWareName;
+            InstallFolder = InstallerConfig.Instance.DefaultLocation;
             WireUpEventHandlers();
         }
 
@@ -66,7 +68,7 @@ namespace HeBianGu.Installer.Default.ViewModels
             set
             {
                 selectFileVisibility = value;
-                OnPropertyChanged("SeleFileVisibility");
+                RaisePropertyChanged("SeleFileVisibility");
             }
         }
         /// <summary>
@@ -78,7 +80,7 @@ namespace HeBianGu.Installer.Default.ViewModels
             set
             {
                 createShortCut = value;
-                OnPropertyChanged("CreateShortCut");
+                RaisePropertyChanged("CreateShortCut");
                 this.SetBurnVariable("CreateShortCut", createShortCut.ToString());
             }
         }
@@ -100,14 +102,14 @@ namespace HeBianGu.Installer.Default.ViewModels
                         bool hassoftwarename = false;
                         foreach (string pa in para)
                         {
-                            if (pa == SoftWareName)
+                            if (pa == InstallerConfig.Instance.ProductName)
                                 hassoftwarename = true;
                         }
                         if (hassoftwarename)
                             installFolder = value;
                         else
-                            installFolder = value + "\\" + SoftWareName;
-                        OnPropertyChanged("InstallFolder");
+                            installFolder = value + "\\" + InstallerConfig.Instance.ProductName;
+                        RaisePropertyChanged("InstallFolder");
                         this.SetBurnVariable("InstallFolder", installFolder);
                     }
                 }
@@ -175,7 +177,7 @@ namespace HeBianGu.Installer.Default.ViewModels
         public void Close(object o)
         {
             installViewModel.State = InstallState.Cancelled;
-            CustomBootstrapperApplication.Dispatcher.InvokeShutdown();
+            DefaultBootstrapperApplication.Dispatcher.InvokeShutdown();
         }
         /// <summary>
         /// 显示/关闭自定义安装界面
@@ -208,7 +210,7 @@ namespace HeBianGu.Installer.Default.ViewModels
         {
             if (installViewModel.State == InstallState.Cancelled)
             {
-                CustomBootstrapperApplication.Dispatcher
+                DefaultBootstrapperApplication.Dispatcher
                   .InvokeShutdown();
                 return;
             }

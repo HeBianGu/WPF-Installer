@@ -25,7 +25,7 @@ namespace HeBianGu.Installer.Default.ViewModels
 
         public void Close(object o)
         {
-            CustomBootstrapperApplication.Dispatcher.InvokeShutdown();
+            DefaultBootstrapperApplication.Dispatcher.InvokeShutdown();
         }
         public bool IsValid(object o)
         {
