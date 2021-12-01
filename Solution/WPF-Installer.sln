@@ -1,0 +1,101 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{16CB4FFB-9D86-4E7E-8C9D-F89BC2C24E11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Installer", "2 - Installer", "{B573225A-C09C-43B1-8662-44BBF475559B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeBianGu.Installer.Default", "..\Source\Installer\HeBianGu.Installer.Default\HeBianGu.Installer.Default.csproj", "{9259E06B-3C64-4654-968E-4B1CC0431AED}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "HeBianGu,Bootstrapper.Demo", "..\Source\Bootstrapper\HeBianGu,Bootstrapper.Demo\HeBianGu,Bootstrapper.Demo.wixproj", "{D1315663-53A9-491C-A9C3-2B26A624D766}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Bootstrapper", "1 - Bootstrapper", "{7C36F12F-16D7-4A22-A173-8F039B0A08EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - General", "3 - General", "{C35E725B-8298-4A8C-9150-42694F3C7898}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Base", "4 - Base", "{8C359F47-7BFB-44AF-B215-A560DC92950F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeBianGu.Base.WpfBase", "..\..\WPF-ControlBase\Source\Base\HeBianGu.Base.WpfBase\HeBianGu.Base.WpfBase.csproj", "{94603EE8-5521-4970-BBD5-5F1C5B1745DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeBianGu.General.WpfControlLib", "..\..\WPF-ControlBase\Source\General\HeBianGu.General.WpfControlLib\HeBianGu.General.WpfControlLib.csproj", "{F9163878-EC92-4AF3-9455-242BFD778D9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Setup", "3 - Setup", "{EB3A63A5-A51B-4052-AB53-CE7AD8A35F0F}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "HeBianGu.Setup.Demo", "..\Source\Setup\HeBianGu.Setup.Demo\HeBianGu.Setup.Demo.wixproj", "{9412B04A-BA3F-472F-AE45-C68A7208FDEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeBianGu.Application.InstallerTest", "..\Source\Application\HeBianGu.Application.InstallerTest\HeBianGu.Application.InstallerTest.csproj", "{C67E0D3C-9B2D-45A5-B3D4-9A802C84CB62}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\WPF-ControlBase\Source\Base\HeBianGu.Base.WpfBase.Share\HeBianGu.Base.WpfBase.Share.projitems*{94603ee8-5521-4970-bbd5-5f1c5b1745de}*SharedItemsImports = 5
+		..\..\WPF-ControlBase\Source\General\HeBianGu.General.WpfControlLib.Share\HeBianGu.General.WpfControlLib.Share.projitems*{f9163878-ec92-4af3-9455-242bfd778d9a}*SharedItemsImports = 5
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9259E06B-3C64-4654-968E-4B1CC0431AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9259E06B-3C64-4654-968E-4B1CC0431AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9259E06B-3C64-4654-968E-4B1CC0431AED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9259E06B-3C64-4654-968E-4B1CC0431AED}.Debug|x86.Build.0 = Debug|Any CPU
+		{9259E06B-3C64-4654-968E-4B1CC0431AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9259E06B-3C64-4654-968E-4B1CC0431AED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9259E06B-3C64-4654-968E-4B1CC0431AED}.Release|x86.ActiveCfg = Release|Any CPU
+		{9259E06B-3C64-4654-968E-4B1CC0431AED}.Release|x86.Build.0 = Release|Any CPU
+		{D1315663-53A9-491C-A9C3-2B26A624D766}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D1315663-53A9-491C-A9C3-2B26A624D766}.Debug|x86.ActiveCfg = Debug|x86
+		{D1315663-53A9-491C-A9C3-2B26A624D766}.Debug|x86.Build.0 = Debug|x86
+		{D1315663-53A9-491C-A9C3-2B26A624D766}.Release|Any CPU.ActiveCfg = Release|x86
+		{D1315663-53A9-491C-A9C3-2B26A624D766}.Release|x86.ActiveCfg = Release|x86
+		{D1315663-53A9-491C-A9C3-2B26A624D766}.Release|x86.Build.0 = Release|x86
+		{94603EE8-5521-4970-BBD5-5F1C5B1745DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94603EE8-5521-4970-BBD5-5F1C5B1745DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94603EE8-5521-4970-BBD5-5F1C5B1745DE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{94603EE8-5521-4970-BBD5-5F1C5B1745DE}.Debug|x86.Build.0 = Debug|Any CPU
+		{94603EE8-5521-4970-BBD5-5F1C5B1745DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94603EE8-5521-4970-BBD5-5F1C5B1745DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94603EE8-5521-4970-BBD5-5F1C5B1745DE}.Release|x86.ActiveCfg = Release|Any CPU
+		{94603EE8-5521-4970-BBD5-5F1C5B1745DE}.Release|x86.Build.0 = Release|Any CPU
+		{F9163878-EC92-4AF3-9455-242BFD778D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9163878-EC92-4AF3-9455-242BFD778D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9163878-EC92-4AF3-9455-242BFD778D9A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F9163878-EC92-4AF3-9455-242BFD778D9A}.Debug|x86.Build.0 = Debug|Any CPU
+		{F9163878-EC92-4AF3-9455-242BFD778D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9163878-EC92-4AF3-9455-242BFD778D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9163878-EC92-4AF3-9455-242BFD778D9A}.Release|x86.ActiveCfg = Release|Any CPU
+		{F9163878-EC92-4AF3-9455-242BFD778D9A}.Release|x86.Build.0 = Release|Any CPU
+		{9412B04A-BA3F-472F-AE45-C68A7208FDEC}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9412B04A-BA3F-472F-AE45-C68A7208FDEC}.Debug|x86.ActiveCfg = Debug|x86
+		{9412B04A-BA3F-472F-AE45-C68A7208FDEC}.Debug|x86.Build.0 = Debug|x86
+		{9412B04A-BA3F-472F-AE45-C68A7208FDEC}.Release|Any CPU.ActiveCfg = Release|x86
+		{9412B04A-BA3F-472F-AE45-C68A7208FDEC}.Release|x86.ActiveCfg = Release|x86
+		{9412B04A-BA3F-472F-AE45-C68A7208FDEC}.Release|x86.Build.0 = Release|x86
+		{C67E0D3C-9B2D-45A5-B3D4-9A802C84CB62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C67E0D3C-9B2D-45A5-B3D4-9A802C84CB62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C67E0D3C-9B2D-45A5-B3D4-9A802C84CB62}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C67E0D3C-9B2D-45A5-B3D4-9A802C84CB62}.Debug|x86.Build.0 = Debug|Any CPU
+		{C67E0D3C-9B2D-45A5-B3D4-9A802C84CB62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C67E0D3C-9B2D-45A5-B3D4-9A802C84CB62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C67E0D3C-9B2D-45A5-B3D4-9A802C84CB62}.Release|x86.ActiveCfg = Release|Any CPU
+		{C67E0D3C-9B2D-45A5-B3D4-9A802C84CB62}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9259E06B-3C64-4654-968E-4B1CC0431AED} = {B573225A-C09C-43B1-8662-44BBF475559B}
+		{D1315663-53A9-491C-A9C3-2B26A624D766} = {7C36F12F-16D7-4A22-A173-8F039B0A08EA}
+		{94603EE8-5521-4970-BBD5-5F1C5B1745DE} = {8C359F47-7BFB-44AF-B215-A560DC92950F}
+		{F9163878-EC92-4AF3-9455-242BFD778D9A} = {C35E725B-8298-4A8C-9150-42694F3C7898}
+		{9412B04A-BA3F-472F-AE45-C68A7208FDEC} = {EB3A63A5-A51B-4052-AB53-CE7AD8A35F0F}
+		{C67E0D3C-9B2D-45A5-B3D4-9A802C84CB62} = {16CB4FFB-9D86-4E7E-8C9D-F89BC2C24E11}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AEBAC36-DE79-461B-A219-4022734CC4D9}
+	EndGlobalSection
+EndGlobal

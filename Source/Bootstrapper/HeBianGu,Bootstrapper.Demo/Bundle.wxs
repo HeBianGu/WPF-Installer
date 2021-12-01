@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Bundle Name="HeBianGu_Bootstrapper.Demo" Version="1.0.0.0" Manufacturer="HeBianGu" UpgradeCode="d1315663-53a9-491c-a9c3-2b26a624d766">
+
+		<BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost" >
+			<Payload SourceFile="$(var.HeBianGu.Installer.Default.TargetDir)HeBianGu.Installer.Default.dll" />
+			<Payload SourceFile="$(var.HeBianGu.Installer.Default.TargetDir)BootstrapperCore.config" />
+			<Payload SourceFile="$(var.HeBianGu.Installer.Default.TargetDir)HeBianGu.Base.WpfBase.dll" />
+			<Payload SourceFile="$(var.HeBianGu.Installer.Default.TargetDir)HeBianGu.General.WpfControlLib.dll" />
+
+		</BootstrapperApplicationRef>
+
+		<WixVariable Id="WixMbaPrereqLicenseUrl" Value=""/>
+		<WixVariable Id="WixMbaPrereqPackageId" Value=""/>
+
+		<!--<Chain DisableRollback="yes">
+			-->
+		<!-- TODO: Define the list of chained packages. -->
+		<!--
+			<MsiPackage SourceFile="C:\Users\LENOVO\source\repos\SetupProject1\SetupProject1\bin\Release\SetupProject1.msi" DisplayInternalUI="no"/>
+		</Chain>-->
+
+		<Chain  DisableRollback="yes">
+			<!--<MsiPackage SourceFile="D:\Download\WiXPackage-master\WiXPackage-master\SetupProject\bin\Release\zh-cn\DGSetup1.msi" DisplayInternalUI="no">
+				<MsiProperty Name="CreateShortcutDeskTop" Value="[CreateShortCut]"/>
+				<MsiProperty Name="InstallFolder" Value="[InstallFolder]"/>
+			</MsiPackage>-->
+
+			<MsiPackage SourceFile="..\..\Setup\HeBianGu.Setup.Demo\bin\Debug\HeBianGu.Setup.Demo.msi" DisplayInternalUI="no">
+				<MsiProperty Name="CreateShortcutDeskTop" Value="[CreateShortCut]"/>
+				<MsiProperty Name="InstallFolder" Value="[InstallFolder]"/>
+			</MsiPackage>
+		</Chain>
+	</Bundle>
+</Wix>

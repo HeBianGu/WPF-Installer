@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="HeBianGu.Installer.Default.Views.ProgressPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HeBianGu.Installer.Default.Views" xmlns:h="QQ:908293466"
+             d:DesignHeight="580" d:DesignWidth="800"
+             mc:Ignorable="d" FontSize="14">
+    
+    <!--<UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/HeBianGu.Installer.Default;component/Dictionary/StyleResources.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Margin="100 0" VerticalAlignment="Center">
+            <h:CarouselControl IsCenter="True" AutoRun="True" VerticalAlignment="Center">
+                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource S.Brush.TextForeground.White}">
+                    <UniformGrid Columns="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50">
+                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.2}" Text="为效率而生" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.4}" Text="更快、更好、更稳定" HorizontalAlignment="Center"/>
+                    </UniformGrid>
+
+                    <TextBlock Text="&#xe909;" Style="{DynamicResource S.TextBlock.FIcon}" FontSize="120"/>
+                </DockPanel>
+
+                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource S.Brush.TextForeground.White}">
+                    <UniformGrid Columns="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50">
+                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.2}" Text="云同步" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.4}" Text="随时随地，轻松使用" HorizontalAlignment="Center"/>
+                    </UniformGrid>
+
+                    <TextBlock Text="&#xe949;" Style="{DynamicResource S.TextBlock.FIcon}" FontSize="120"/>
+                </DockPanel>
+
+                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource S.Brush.TextForeground.White}">
+                    <UniformGrid Columns="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50">
+                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.2}" Text="恰到好处的简单" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.4}" Text="轻松上手，极致体验" HorizontalAlignment="Center"/>
+                    </UniformGrid>
+
+                    <TextBlock Text="&#xe6b7;" Style="{DynamicResource S.TextBlock.FIcon}" FontSize="120"/>
+                </DockPanel>
+            </h:CarouselControl>
+        </DockPanel>
+
+        <!--<TextBlock Text="ProgressPage" Foreground="{DynamicResource S.Brush.TextForeground.White}" 
+                   FontSize="{DynamicResource S.FontSize.Header.1}" HorizontalAlignment="Center"/>-->
+
+        <Border Background="{DynamicResource S.Brush.TextBackground.Default}" Grid.Row="1" Margin="-3" CornerRadius="{DynamicResource S.Window.Item.CornerRadius.Bottom}">
+            <UniformGrid VerticalAlignment="Stretch" Columns="1" Margin="30 0 30 10">
+                <WrapPanel>
+                    <TextBlock Text="{Binding installViewModel.State}"/>
+                    <TextBlock Text="{Binding Message}"/>
+                </WrapPanel>
+
+                <ProgressBar Value="{Binding Progress}" HorizontalAlignment="Stretch" Minimum="0" Maximum="100"/>
+
+                <Button HorizontalAlignment="Right" Content="{DynamicResource Cancel}" Command="{Binding btn_cancel}"></Button>
+            </UniformGrid>
+        </Border>
+    </Grid>
+</UserControl>
