@@ -8,24 +8,32 @@
    FontSize="14"
    Title="{Binding Source={x:Static local:InstallerConfig.Instance},Path=Version}"
    mc:Ignorable="d" WindowStyle="None" 
-   CaptionBackground="{DynamicResource S.Brush.Accent}" 
+   CaptionBackground="{DynamicResource {x:Static h:BrushKeys.Accent}}" 
    xmlns:h="QQ:908293466" 
-   Background="{DynamicResource S.Brush.Accent}" FIcon="&#xe79c;"
-   CaptionForeground="{DynamicResource S.Brush.TextForeground.White}" CaptionHeight="35"
-   Style="{DynamicResource S.Window.Dialog.Default}"
+   Background="{DynamicResource {x:Static h:BrushKeys.Accent}}" Icon="&#xe79c;"
+   CaptionForeground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}" CaptionHeight="35"
+   Style="{DynamicResource {x:Static h:DialogWindowBase.DynamicKey}}"
    Width="700" Height="450" WindowStartupLocation="CenterScreen">
+    <!--<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                --><!--用于设置动态主题--><!--
+                <ResourceDictionary Source="/HeBianGu.Base.WpfBase;component/Theme/Color/LightThemeResource.xaml"/>
+
+                --><!--用于设置基础资源--><!--
+                <ResourceDictionary Source="/HeBianGu.Base.WpfBase;component/Theme/HeBianGu.Theme.Default.xaml"/>
+
+                --><!--用于设置控件样式--><!--
+                <ResourceDictionary Source="/HeBianGu.General.WpfControlLib;component/Theme/HeBianGu.Themes.Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>-->
+
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!--用于设置动态主题-->
-                <ResourceDictionary Source="/HeBianGu.Base.WpfBase;component/Theme/Color/LightThemeResource.xaml"/>
-
-                <!--用于设置基础资源-->
-                <ResourceDictionary Source="/HeBianGu.Base.WpfBase;component/Theme/HeBianGu.Theme.Default.xaml"/>
-
-                <!--用于设置控件样式-->
-                <ResourceDictionary Source="/HeBianGu.General.WpfControlLib;component/Theme/HeBianGu.Themes.Default.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/HeBianGu.General.WpfControlLib;component/Themes/Resource.xaml" />
+            </ResourceDictionary.MergedDictionaries> 
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -36,19 +44,19 @@
         <!--<item:InstallPage/>-->
         <!--<item:CancelPage/>-->
 
-        <Grid  Visibility="{Binding ProgressEnabled,Converter={StaticResource BooleanToVisibilityConverter}}">
+        <Grid  Visibility="{Binding ProgressEnabled,Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}">
             <item:ProgressPage/>
         </Grid>
-        <Grid Visibility="{Binding UninstallEnabled,Converter={StaticResource BooleanToVisibilityConverter}}"  >
+        <Grid Visibility="{Binding UninstallEnabled,Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}"  >
             <item:UnistallRepairPage/>
         </Grid>
-        <Grid Visibility="{Binding FinishEnabled,Converter={StaticResource BooleanToVisibilityConverter}}" >
+        <Grid Visibility="{Binding FinishEnabled,Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}" >
             <item:FinishPage/>
         </Grid>
-        <Grid Visibility="{Binding InstallEnabled,Converter={StaticResource BooleanToVisibilityConverter}}">
+        <Grid Visibility="{Binding InstallEnabled,Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}">
             <item:InstallPage/>
         </Grid>
-        <Grid Visibility="{Binding CancelEnabled,Converter={StaticResource BooleanToVisibilityConverter}}">
+        <Grid Visibility="{Binding CancelEnabled,Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}">
             <item:CancelPage/>
         </Grid>
     </Grid>

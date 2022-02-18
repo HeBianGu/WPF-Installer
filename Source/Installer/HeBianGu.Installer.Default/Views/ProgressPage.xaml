@@ -22,48 +22,48 @@
 
         <DockPanel Margin="100 0" VerticalAlignment="Center">
             <h:CarouselControl IsCenter="True" AutoRun="True" VerticalAlignment="Center">
-                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource S.Brush.TextForeground.White}">
+                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}">
                     <UniformGrid Columns="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50">
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.2}" Text="为效率而生" HorizontalAlignment="Center"/>
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.4}" Text="更快、更好、更稳定" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header2}}" Text="为效率而生" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header4}}" Text="更快、更好、更稳定" HorizontalAlignment="Center"/>
                     </UniformGrid>
 
-                    <TextBlock Text="&#xe909;" Style="{DynamicResource S.TextBlock.FIcon}" FontSize="120"/>
+                    <TextBlock Text="&#xe909;" Style="{DynamicResource {x:Static h:TextBlockKeys.Icon}}" FontSize="120"/>
                 </DockPanel>
 
-                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource S.Brush.TextForeground.White}">
+                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}">
                     <UniformGrid Columns="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50">
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.2}" Text="云同步" HorizontalAlignment="Center"/>
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.4}" Text="随时随地，轻松使用" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header2}}" Text="云同步" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header4}}" Text="随时随地，轻松使用" HorizontalAlignment="Center"/>
                     </UniformGrid>
 
-                    <TextBlock Text="&#xe949;" Style="{DynamicResource S.TextBlock.FIcon}" FontSize="120"/>
+                    <TextBlock Text="&#xe949;" Style="{DynamicResource {x:Static h:TextBlockKeys.Icon}}" FontSize="120"/>
                 </DockPanel>
 
-                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource S.Brush.TextForeground.White}">
+                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}">
                     <UniformGrid Columns="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50">
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.2}" Text="恰到好处的简单" HorizontalAlignment="Center"/>
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.4}" Text="轻松上手，极致体验" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header2}}" Text="恰到好处的简单" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header4}}" Text="轻松上手，极致体验" HorizontalAlignment="Center"/>
                     </UniformGrid>
 
-                    <TextBlock Text="&#xe6b7;" Style="{DynamicResource S.TextBlock.FIcon}" FontSize="120"/>
+                    <TextBlock Text="&#xe6b7;" Style="{DynamicResource {x:Static h:TextBlockKeys.Icon}}" FontSize="120"/>
                 </DockPanel>
             </h:CarouselControl>
         </DockPanel>
 
-        <!--<TextBlock Text="ProgressPage" Foreground="{DynamicResource S.Brush.TextForeground.White}" 
-                   FontSize="{DynamicResource S.FontSize.Header.1}" HorizontalAlignment="Center"/>-->
+        <!--<TextBlock Text="ProgressPage" Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}" 
+                   FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header1}}" HorizontalAlignment="Center"/>-->
 
-        <Border Background="{DynamicResource S.Brush.TextBackground.Default}" Grid.Row="1" Margin="-3" CornerRadius="{DynamicResource S.Window.Item.CornerRadius.Bottom}">
+        <Border Background="{DynamicResource {x:Static h:BrushKeys.BackgroundDefault}}" Grid.Row="1" Margin="-3" CornerRadius="{DynamicResource {x:Static h:CornerRadiusKeys.Bottom}}">
             <UniformGrid VerticalAlignment="Stretch" Columns="1" Margin="30 0 30 10">
-                <WrapPanel>
-                    <TextBlock Text="{Binding installViewModel.State}"/>
-                    <TextBlock Text="{Binding Message}"/>
+                <WrapPanel VerticalAlignment="Center">
+                    <TextBlock Text="{Binding installViewModel.State}" Style="{DynamicResource {x:Static h:TextBlockKeys.Default}}"/>
+                    <TextBlock Text="{Binding Message}" Style="{DynamicResource {x:Static h:TextBlockKeys.Default}}"/>
                 </WrapPanel>
 
-                <ProgressBar Value="{Binding Progress}" HorizontalAlignment="Stretch" Minimum="0" Maximum="100"/>
+                <ProgressBar Value="{Binding Progress}" Style="{DynamicResource {x:Static h:ProgressBarKeys.Default}}" HorizontalAlignment="Stretch" Minimum="0" Maximum="100"/>
 
-                <Button HorizontalAlignment="Right" Content="取消" Command="{Binding btn_cancel}"></Button>
+                <Button HorizontalAlignment="Right" Content="取消" Style="{DynamicResource {x:Static h:ButtonKeys.Accent}}" Command="{Binding btn_cancel}"></Button>
             </UniformGrid>
         </Border>
     </Grid>

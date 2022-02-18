@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeBianGu.Installer.Default.Views"
+             xmlns:h="QQ:908293466"
              mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
@@ -11,23 +12,23 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
  
-        <DockPanel  TextBlock.Foreground="{DynamicResource S.Brush.TextForeground.White}" VerticalAlignment="Center">
+        <DockPanel TextBlock.Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}" VerticalAlignment="Center">
             <UniformGrid Columns="1"  DockPanel.Dock="Bottom">
-                <TextBlock  FontSize="{DynamicResource S.FontSize.Header.1}" HorizontalAlignment="Center">
+                <TextBlock  FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header1}}"  HorizontalAlignment="Center">
                     <Run Text="安装失败"/>
                 </TextBlock>
                 <TextBlock
-                   FontSize="{DynamicResource S.FontSize.Header.4}" HorizontalAlignment="Center">
+                   FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header4}}" HorizontalAlignment="Center">
                     <Run Text="您的计算机已经安装其他版本，请先前往控制面板进行卸载"/>
                 </TextBlock>
             </UniformGrid>
 
-            <TextBlock Style="{DynamicResource S.TextBlock.FIcon}"  Text="&#xe857;" FontSize="105"/>
+            <TextBlock Style="{DynamicResource {x:Static h:TextBlockKeys.Icon}}"  Text="&#xe857;" FontSize="105"/>
 
         </DockPanel>
         
-        <Border Background="{DynamicResource S.Brush.TextBackground.Default}" Grid.Row="1" Margin="-3" CornerRadius="{DynamicResource S.Window.Item.CornerRadius.Bottom}">
-            <Button  Content="关闭" Command="{Binding btn_close}" Width="200" Height="45" FontSize="{DynamicResource S.FontSize.Header.2}" />
+        <Border Background="{DynamicResource {x:Static h:BrushKeys.BackgroundDefault}}" Grid.Row="1" Margin="-3" CornerRadius="{DynamicResource {x:Static h:CornerRadiusKeys.Bottom}}">
+            <Button  Content="关闭" Style="{DynamicResource {x:Static h:ButtonKeys.Accent}}" Command="{Binding btn_close}" Width="200" Height="45" FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header2}}" />
         </Border>
     </Grid>
 </UserControl>

@@ -37,9 +37,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\WiX Toolset v3.10\SDK\BootstrapperCore.dll</HintPath>
     </Reference>
+    <Reference Include="HeBianGu.Base.WpfBase, Version=4.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Solution\packages\HeBianGu.Base.WpfBase.4.0.6\lib\net45\HeBianGu.Base.WpfBase.dll</HintPath>
+    </Reference>
+    <Reference Include="HeBianGu.General.WpfControlLib, Version=4.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Solution\packages\HeBianGu.General.WpfControlLib.4.0.6\lib\net45\HeBianGu.General.WpfControlLib.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -92,6 +99,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\CancelPage.xaml">
@@ -127,14 +135,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\WPF-ControlBase\Source\Base\HeBianGu.Base.WpfBase\HeBianGu.Base.WpfBase.csproj">
-      <Project>{94603ee8-5521-4970-bbd5-5f1c5b1745de}</Project>
-      <Name>HeBianGu.Base.WpfBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\WPF-ControlBase\Source\General\HeBianGu.General.WpfControlLib\HeBianGu.General.WpfControlLib.csproj">
-      <Project>{f9163878-ec92-4af3-9455-242bfd778d9a}</Project>
-      <Name>HeBianGu.General.WpfControlLib</Name>
-    </ProjectReference>
+    <Content Include="Resources\demo.css" />
+    <Content Include="Resources\demo_index.html" />
+    <Content Include="Resources\iconfont.css" />
+    <Content Include="Resources\iconfont.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

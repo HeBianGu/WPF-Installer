@@ -14,43 +14,44 @@
         </Grid.RowDefinitions>
 
         <DockPanel Margin="100 0" VerticalAlignment="Center">
-            <h:CarouselControl IsCenter="True" AutoRun="True" VerticalAlignment="Center">
-                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource S.Brush.TextForeground.White}">
+            <h:CarouselControl IsCenter="True" AutoRun="True" VerticalAlignment="Center" Foreground="White">
+                <DockPanel Width="400" Height="230" TextBlock.Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}">
                     <UniformGrid Columns="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50">
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.2}" Text="为效率而生" HorizontalAlignment="Center"/>
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.4}" Text="更快、更好、更稳定" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header2}}" Text="为效率而生" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header4}}" Text="更快、更好、更稳定" HorizontalAlignment="Center"/>
                     </UniformGrid>
 
-                    <TextBlock Text="&#xe909;" Style="{DynamicResource S.TextBlock.FIcon}" FontSize="120"/>
+                    <TextBlock Text="&#xe909;" Style="{DynamicResource {x:Static h:TextBlockKeys.Icon}}" FontSize="120"/>
                 </DockPanel>
 
-                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource S.Brush.TextForeground.White}">
+                <DockPanel Width="400" Height="230" TextBlock.Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}">
                     <UniformGrid Columns="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50">
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.2}" Text="云同步" HorizontalAlignment="Center"/>
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.4}" Text="随时随地，轻松使用" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header2}}" Text="云同步" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header4}}" Text="随时随地，轻松使用" HorizontalAlignment="Center"/>
                     </UniformGrid>
 
-                    <TextBlock Text="&#xe949;" Style="{DynamicResource S.TextBlock.FIcon}" FontSize="120"/>
+                    <TextBlock Text="&#xe949;" Style="{DynamicResource {x:Static h:TextBlockKeys.Icon}}" FontSize="120"/>
                 </DockPanel>
 
-                <DockPanel Width="400" Height="250" TextBlock.Foreground="{DynamicResource S.Brush.TextForeground.White}">
+                <DockPanel Width="400" Height="230" TextBlock.Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}">
                     <UniformGrid Columns="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50">
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.2}" Text="恰到好处的简单" HorizontalAlignment="Center"/>
-                        <TextBlock FontSize="{DynamicResource S.FontSize.Header.4}" Text="轻松上手，极致体验" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header2}}" Text="恰到好处的简单" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header4}}" Text="轻松上手，极致体验" HorizontalAlignment="Center"/>
                     </UniformGrid>
 
-                    <TextBlock Text="&#xe6b7;" Style="{DynamicResource S.TextBlock.FIcon}" FontSize="120"/>
+                    <TextBlock Text="&#xe6b7;" Style="{DynamicResource {x:Static h:TextBlockKeys.Icon}}" FontSize="120"/>
                 </DockPanel>
             </h:CarouselControl>
         </DockPanel>
 
-        <Border Background="{DynamicResource S.Brush.TextBackground.Default}"  Grid.Row="1" Margin="-3" CornerRadius="{DynamicResource S.Window.Item.CornerRadius.Bottom}">
+        <Border Background="{DynamicResource {x:Static h:BrushKeys.BackgroundDefault}}"  Grid.Row="1" Margin="-3" CornerRadius="{DynamicResource {x:Static h:CornerRadiusKeys.Bottom}}">
             <Grid Margin="30 10 30 20">
                 <Grid>
-                    <Button Content="快速安装" Command="{Binding btn_install}"
-                            Width="200" Height="45" FontSize="{DynamicResource S.FontSize.Header.2}" IsEnabled="{Binding ElementName=Accept,Path=IsChecked}"/>
+                    <Button Content="快速安装" Command="{Binding btn_install}" Style="{DynamicResource {x:Static h:ButtonKeys.Accent}}"
+                            Width="200" Height="45" FontSize="{DynamicResource {x:Static h:FontSizeKeys.Header2}}" 
+                            IsEnabled="{Binding ElementName=Accept,Path=IsChecked}"/>
 
-                    <Button HorizontalAlignment="Right" Command="{Binding btn_show}" Style="{DynamicResource S.Button.Transparent}" VerticalAlignment="Bottom" BorderThickness="0" Background="Transparent">
+                    <Button HorizontalAlignment="Right" Command="{Binding btn_show}" Style="{DynamicResource {x:Static h:ButtonKeys.Transparent}}" VerticalAlignment="Bottom" BorderThickness="0" Background="Transparent">
                         <WrapPanel>
                             <TextBlock Text="自定义安装"/>
                             <TextBlock Text=" &gt;"/>
@@ -58,28 +59,28 @@
                     </Button>
                 </Grid>
 
-                <UniformGrid Visibility="{Binding SeleFileVisibility}" Columns="1" Background="{DynamicResource S.Brush.TextBackground.Default}">
+                <UniformGrid Visibility="{Binding SeleFileVisibility}" Columns="1" Background="{DynamicResource {x:Static h:BrushKeys.BackgroundDefault}}">
 
                     <TextBlock Text="安装位置："/>
 
                     <h:Row VerticalAlignment="Center" Margin="-5 -5 0 0">
-                        <TextBox Grid.ColumnSpan="10" Text="{Binding InstallFolder}" VerticalContentAlignment="Center"/>
+                        <TextBox Grid.ColumnSpan="10" Text="{Binding InstallFolder}" Style="{DynamicResource {x:Static h:TextBoxKeys.Default}}" VerticalContentAlignment="Center"/>
                         <Button Content="浏览" Width="Auto" Command="{Binding btn_browse}" Grid.Column="10" Grid.ColumnSpan="2"
-                            Style="{DynamicResource S.Button.Transparent}" 
-                            BorderBrush="{DynamicResource S.Brush.TextBorderBrush.Default}" BorderThickness="1"/>
+                            Style="{DynamicResource {x:Static h:ButtonKeys.Transparent}}" 
+                            BorderBrush="{DynamicResource {x:Static h:BrushKeys.BorderBrushDefault}}" BorderThickness="1"/>
                     </h:Row>
 
-                    <CheckBox IsChecked="{Binding CreateShortCut}" Content="创建桌面图标"/>
+                    <CheckBox IsChecked="{Binding CreateShortCut}" Style="{DynamicResource {x:Static h:CheckBoxKeys.Default}}" Content="创建桌面图标"/>
 
                     <UniformGrid HorizontalAlignment="Right" Rows="1" Margin="0 -5">
-                        <Button Content="返回" Command="{Binding btn_show}" Style="{DynamicResource S.Button.Transparent}" 
-                            BorderBrush="{DynamicResource S.Brush.TextBorderBrush.Default}" BorderThickness="1"/>
-                        <Button Content="立即安装" Command="{Binding btn_install}" IsEnabled="{Binding ElementName=Accept,Path=IsChecked}"/>
+                        <Button Content="返回" Command="{Binding btn_show}" Style="{DynamicResource {x:Static h:ButtonKeys.Transparent}}" 
+                            BorderBrush="{DynamicResource {x:Static h:BrushKeys.BorderBrushDefault}}" BorderThickness="1"/>
+                        <Button Content="立即安装" Style="{DynamicResource {x:Static h:ButtonKeys.Accent}}" Command="{Binding btn_install}" IsEnabled="{Binding ElementName=Accept,Path=IsChecked}"/>
                     </UniformGrid>
                 </UniformGrid>
 
 
-                <CheckBox Grid.Row="1" Name="Accept" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="{DynamicResource S.Brush.TextForeground.Default}" Width="300" IsChecked="True">
+                <CheckBox Grid.Row="1" Name="Accept" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundDefault}}" Width="300" IsChecked="True">
                     <CheckBox.Style>
                         <Style TargetType="{x:Type CheckBox}">
                             <Setter Property="Padding" Value="4,0,0,0"/>

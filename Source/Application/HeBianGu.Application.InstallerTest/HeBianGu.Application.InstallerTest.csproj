@@ -35,7 +35,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BootstrapperCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ce35f76fcda82bad" />
+    <Reference Include="HeBianGu.Base.WpfBase, Version=4.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Solution\packages\HeBianGu.Base.WpfBase.4.0.6\lib\net45\HeBianGu.Base.WpfBase.dll</HintPath>
+    </Reference>
+    <Reference Include="HeBianGu.General.WpfControlLib, Version=4.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Solution\packages\HeBianGu.General.WpfControlLib.4.0.6\lib\net45\HeBianGu.General.WpfControlLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,6 +85,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,18 +95,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\WPF-ControlBase\Source\Base\HeBianGu.Base.WpfBase\HeBianGu.Base.WpfBase.csproj">
-      <Project>{94603ee8-5521-4970-bbd5-5f1c5b1745de}</Project>
-      <Name>HeBianGu.Base.WpfBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\WPF-ControlBase\Source\General\HeBianGu.General.WpfControlLib\HeBianGu.General.WpfControlLib.csproj">
-      <Project>{f9163878-ec92-4af3-9455-242bfd778d9a}</Project>
-      <Name>HeBianGu.General.WpfControlLib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Installer\HeBianGu.Installer.Default\HeBianGu.Installer.Default.csproj">
       <Project>{9259E06B-3C64-4654-968E-4B1CC0431AED}</Project>
       <Name>HeBianGu.Installer.Default</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\demo.css" />
+    <Content Include="Resources\demo_index.html" />
+    <Content Include="Resources\iconfont.css" />
+    <Content Include="Resources\iconfont.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
